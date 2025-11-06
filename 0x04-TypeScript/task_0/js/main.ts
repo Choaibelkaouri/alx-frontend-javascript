@@ -5,25 +5,36 @@ interface Student {
   location: string;
 }
 
-const student1: Student = { firstName: 'Alice', lastName: 'Ng', age: 20, location: 'Rabat' };
-const student2: Student = { firstName: 'Ben', lastName: 'Omar', age: 22, location: 'Casablanca' };
+const student1: Student = {
+  firstName: 'Guillaume',
+  lastName: 'Salva',
+  age: 23,
+  location: 'San Francisco'
+};
+
+const student2: Student = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 25,
+  location: 'London'
+};
 
 const studentsList: Student[] = [student1, student2];
 
-// Render a table with First Name and Location
-const table: HTMLTableElement = document.createElement('table');
-const tbody: HTMLTableSectionElement = document.createElement('tbody');
+// إنشاء جدول HTML وإضافة صف لكل طالب
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
 
-studentsList.forEach((s) => {
-  const row: HTMLTableRowElement = document.createElement('tr');
+studentsList.forEach((student) => {
+  const row = document.createElement('tr');
 
-  const firstNameCell: HTMLTableCellElement = document.createElement('td');
-  firstNameCell.textContent = s.firstName;
+  const nameCell = document.createElement('td');
+  nameCell.textContent = student.firstName;
 
-  const locationCell: HTMLTableCellElement = document.createElement('td');
-  locationCell.textContent = s.location;
+  const locationCell = document.createElement('td');
+  locationCell.textContent = student.location;
 
-  row.appendChild(firstNameCell);
+  row.appendChild(nameCell);
   row.appendChild(locationCell);
   tbody.appendChild(row);
 });
