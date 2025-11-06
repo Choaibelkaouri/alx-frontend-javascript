@@ -9,7 +9,7 @@ interface Teacher {
 }
 
 // 2. Directors interface extends Teacher
-interface Directors extends Teacher {
+interface Director extends Teacher  {
   numberOfReports: number;
 }
 
