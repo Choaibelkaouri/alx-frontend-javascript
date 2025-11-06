@@ -1,3 +1,4 @@
+// 1. Teacher interface
 export interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -7,12 +8,12 @@ export interface Teacher {
   [propName: string]: any;
 }
 
-
+// 2. Directors interface that extends Teacher
 export interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-
+// ✅ Example test
 const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
