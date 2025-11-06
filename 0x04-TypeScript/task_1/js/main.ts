@@ -1,54 +1,24 @@
-// 1) Teacher interface
 export interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
-  fullTimeEmployee: boolean;       // always defined
-  yearsOfExperience?: number;      // optional
-  location: string;                // always defined
-  [propName: string]: any;         // allow additional properties
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [propName: string]: any;
 }
 
-// 2) Directors extends Teacher
+
 export interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-// Example:
-const teacher3: Teacher = {
+
+const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
-  fullTimeEmployee: false,
   location: 'London',
-  contract: false,
+  fullTimeEmployee: true,
+  numberOfReports: 17,
 };
-console.log(teacher3);
 
-// 3) printTeacher + interface
-export interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
-
-export const printTeacher: printTeacherFunction = (firstName, lastName) =>
-  `${firstName[0]}. ${lastName}`;
-
-// 4) StudentClass + interfaces for constructor & instance
-export interface StudentClassConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
-}
-
-export interface StudentClassInterface {
-  workOnHomework(): string;
-  displayName(): string;
-}
-
-export class StudentClass implements StudentClassInterface {
-  constructor(private firstName: string, private lastName: string) {}
-
-  workOnHomework(): string {
-    return 'Currently working';
-  }
-
-  displayName(): string {
-    return this.firstName;
-  }
-}
+console.log(director1);
