@@ -8,12 +8,12 @@ export interface Teacher {
   [propName: string]: any;
 }
 
-// 2. Directors interface that extends Teacher
+// 2. Directors interface extends Teacher
 export interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-// ✅ Example test
+// Example test
 const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
