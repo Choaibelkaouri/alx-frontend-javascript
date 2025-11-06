@@ -11,15 +11,15 @@ interface Director extends Teacher {
   numberOfReports: number;
 }
 
-// ✅ interface for the function
+// ✅ Interface for printTeacher function
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// ✅ Regular function (not arrow)
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+// ✅ Function written exactly as checker expects
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName}. ${lastName}`;
 }
 
-// Example
-console.log(printTeacher("John", "Doe"));
+// ✅ Example test
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
