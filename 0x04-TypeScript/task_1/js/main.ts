@@ -1,5 +1,5 @@
 // 1. Teacher interface
-export interface Teacher {
+interface Directors extends Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
